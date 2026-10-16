@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+  <title>FLAP Institute — Cultivando a Cultura da Excelência</title>
+  <meta name="description" content="Plataforma de pesquisa, educação e experiências dedicada à cultura da excelência em aviação, design e luxo." />
+
+  <!-- Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,300&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Estilos Customizados -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-[#050d1a] text-white font-sans antialiased">
+
+  <!-- Navegação Flutuante Lateral (DotNav) -->
+  <nav id="dot-nav" class="fixed left-4 lg:left-8 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-3">
+    <a href="#hero" aria-label="Ir para a seção hero" class="dot-item active"></a>
+    <a href="#instituto" aria-label="Ir para a seção instituto" class="dot-item"></a>
+    <a href="#manifesto" aria-label="Ir para a seção manifesto" class="dot-item"></a>
+    <a href="#palestrantes" aria-label="Ir para a seção palestrantes" class="dot-item"></a>
+    <a href="#flap-lab" aria-label="Ir para a seção flap-lab" class="dot-item"></a>
+    <a href="#encontros" aria-label="Ir para a seção encontros" class="dot-item"></a>
+    <a href="#quem" aria-label="Ir para a seção quem" class="dot-item"></a>
+    <a href="#observatorio" aria-label="Ir para a seção observatorio" class="dot-item"></a>
+    <a href="#joint" aria-label="Ir para a seção joint" class="dot-item"></a>
+  </nav>
+
+  <!-- Botão Flutuante WhatsApp -->
+  <a
+    href="https://wa.me/5511924878727?text=Olá,%20gostaria%20de%20receber%20mais%20informações%20sobre%20os%20programas%20da%20FLAP%20Institute."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Atendimento via WhatsApp"
+    class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#c9a96e] hover:bg-[#b08e54] text-[#050d1a] px-4 py-3 rounded-full shadow-2xl transition-all hover:scale-105 font-sans text-xs font-medium uppercase tracking-wider"
+  >
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#050d1a]">
+      <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/>
+    </svg>
+    <span class="hidden sm:inline">Concierge FLAP</span>
+  </a>
+
+  <!-- Cabeçalho (Header) -->
+  <header class="fixed top-0 left-0 right-0 z-50 pt-6 pb-2 px-8 lg:px-16 bg-[#050d1a]/80 backdrop-blur-sm">
+    <div class="max-w-[1400px] mx-auto flex items-center justify-between pb-3">
+      <button id="open-menu-btn" class="flex items-center gap-2.5 text-[#c9a96e] hover:opacity-80 transition-opacity uppercase tracking-[0.25em] text-[10px] lg:text-xs font-light">
+        <div class="flex flex-col space-y-[3px] w-4">
+          <span class="block h-[1px] w-full bg-[#c9a96e]"></span>
+          <span class="block h-[1px] w-full bg-[#c9a96e]"></span>
+          <span class="block h-[1px] w-full bg-[#c9a96e]"></span>
+        </div>
+        <span>MENU</span>
+      </button>
+
+      <div class="flex justify-center">
+        <a href="#hero">
+          <img src="imagens/Flap Logo Vert Azul_Ouro.png" alt="FLAP INSTITUTE" class="h-5 lg:h-6 object-contain" />
+        </a>
+      </div>
+
+      <a href="#joint" class="text-[#c9a96e] hover:text-white transition-colors uppercase tracking-[0.25em] text-[10px] lg:text-xs font-light">
+        JOIN THE CULTURE
+      </a>
+    </div>
+    <div class="max-w-[1400px] mx-auto border-b border-[#c9a96e]/30"></div>
+  </header>
+
+  <!-- Overlay do Menu de Navegação -->
+  <div id="menu-overlay" class="menu-overlay fixed inset-0 z-50 flex-col justify-between overflow-hidden hidden" style="background: rgba(6, 9, 17, 0.96); backdrop-filter: blur(12px);">
+    <div class="w-full">
+      <div class="max-w-[1400px] mx-auto px-8 lg:px-16 pt-6 pb-3 flex items-center justify-between">
+        <button id="close-menu-btn" class="flex items-center gap-2 text-[#c9a96e] hover:text-white transition-colors uppercase tracking-[0.25em] text-[10px] lg:text-xs font-light">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          <span>FECHAR</span>
+        </button>
+
+        <a href="#hero" class="menu-nav-link flex justify-center">
+          <img src="imagens/Flap Logo Vert Azul_Ouro.png" alt="FLAP INSTITUTE" class="h-5 lg:h-6 object-contain" />
+        </a>
+
+        <a href="#joint" class="menu-nav-link text-[#c9a96e] hover:text-white transition-colors uppercase tracking-[0.25em] text-[10px] lg:text-xs font-light">
+          JOIN THE CULTURE
+        </a>
+      </div>
+      <div class="max-w-[1400px] mx-auto border-b border-[#c9a96e]/30"></div>
+    </div>
+
+    <div class="my-auto max-w-[1400px] w-full mx-auto px-8 lg:px-16 grid grid-cols-12 items-center" id="menu-content-box">
+      <div class="col-span-12 sm:col-span-5 md:col-span-4 flex flex-col items-end text-right space-y-5 lg:space-y-6">
+        <a href="#instituto" class="menu-nav-link font-sans text-xs sm:text-sm lg:text-base tracking-[0.25em] uppercase font-light text-[#c9a96e] hover:text-white transition-colors duration-300">INSTITUTO</a>
+        <a href="#manifesto" class="menu-nav-link font-sans text-xs sm:text-sm lg:text-base tracking-[0.25em] uppercase font-light text-[#c9a96e] hover:text-white transition-colors duration-300">MANIFESTO</a>
+        <a href="#excelencia-section" class="menu-nav-link font-sans text-xs sm:text-sm lg:text-base tracking-[0.25em] uppercase font-light text-[#c9a96e] hover:text-white transition-colors duration-300">CÓDIGOS</a>
+        <a href="#palestrantes" class="menu-nav-link font-sans text-xs sm:text-sm lg:text-base tracking-[0.25em] uppercase font-light text-[#c9a96e] hover:text-white transition-colors duration-300">NOSSOS EXPERTS</a>
+        <a href="#flap-lab" class="menu-nav-link font-sans text-xs sm:text-sm lg:text-base tracking-[0.25em] uppercase font-light text-[#c9a96e] hover:text-white transition-colors duration-300">FLAP LAB</a>
+        <a href="#encontros" class="menu-nav-link font-sans text-xs sm:text-sm lg:text-base tracking-[0.25em] uppercase font-light text-[#c9a96e] hover:text-white transition-colors duration-300">ENCONTROS</a>
+        <a href="#observatorio" class="menu-nav-link font-sans text-xs sm:text-sm lg:text-base tracking-[0.25em] uppercase font-light text-[#c9a96e] hover:text-white transition-colors duration-300">OBSERVATORIO</a>
+        <a href="#joint" class="menu-nav-link font-sans text-xs sm:text-sm lg:text-base tracking-[0.25em] uppercase font-light text-[#c9a96e] hover:text-white transition-colors duration-300">JOIN THE CULTURE</a>
+      </div>
+    </div>
+
+    <div class="h-16"></div>
+  </div>
+
+  <main>
+    <!-- Seção Hero -->
+    <section id="hero" class="relative min-h-[65vh] sm:min-h-[80vh] lg:min-h-screen overflow-hidden bg-[#050d1a]">
+      <img src="imagens/flap-hero-bg.png" alt="FLAP Institute — Imersões Executivas, Consultoria em Cultura de Excelência e Luxo" class="absolute inset-0 w-full h-full object-contain sm:object-cover object-center" />
+      <div class="absolute bottom-6 sm:bottom-10 left-0 right-0 flex justify-center z-10 px-4">
+        <a href="#manifesto" class="inline-flex items-center justify-center px-5 py-2.5 sm:px-8 sm:py-3 rounded-full font-display text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all hover:opacity-85 shadow-lg max-w-[85%] text-center bg-[#c9a96e] text-[#050d1a]">
+          DESCUBRA ESSA CULTURA
+        </a>
+      </div>
+    </section>
+
+    <!-- Seção O Instituto -->
+    <section id="instituto" class="relative w-full flex flex-col text-white overflow-hidden py-20 lg:py-28">
+      <div class="absolute inset-0 z-0">
+        <img src="imagens/instituto-notebook-new.jpg" alt="O Instituto Flap" class="w-full h-full object-cover object-center" />
+      </div>
+      <div class="relative z-10 w-full max-w-[1400px] mx-auto px-8 lg:px-20">
+        <div class="w-full text-center mb-12 lg:mb-16">
+          <h2 class="text-center font-display text-xs sm:text-lg md:text-xl tracking-[0.2em] sm:tracking-[0.25em] uppercase mb-8 sm:mb-14 leading-relaxed">
+        <span class="text-gray-400">O </span>
+        <br class="block sm:hidden" />
+        <span class="text-[#c9a96e]">INSTITUTO</span>
+      </h2>
+        </div>
+        <div class="w-full sm:max-w-md lg:w-5/12 space-y-12">
+          <p class="font-sans text-xs lg:text-sm tracking-[0.2em] uppercase font-light leading-relaxed text-[#c9a96e]">
+            A <span class="text-[#d1d5db]">FLAP INSTITUTE</span>, É UMA PLATAFORMA DE PESQUISA, EDUCAÇÃO, EXPERIÊNCIAS E CONEXÕES, CRIADA PARA QUEM ACREDITA QUE A EXCELÊNCIA NÃO É UM DESTINO, MAS SIM UMA <span class="text-[#d1d5db]">CULTURA</span>.
+          </p>
+          <p class="font-sans text-xs lg:text-sm tracking-[0.2em] uppercase font-light leading-relaxed text-[#c9a96e]">
+            INVESTIGAMOS OS <span class="text-[#d1d5db]"> CÓDIGOS INVISÍVEIS</span> QUE APARECEM EM TODOS OS SERVIÇOS, PRODUTOS E AMBIENTES EXTRAORDINÁRIOS, PARA ASSIM OS TRANSFORMAR EM CONHECIMENTO, BEM COMO EM NOVAS FORMAS DE PENSAR, APRENDER E AGIR.
+          </p>
+        </div>
+      </div>
+    </section>
+
+   <!-- Seção Policrise (Manifesto) -->
+    <section id="manifesto" class="py-8 sm:py-12 px-4 sm:px-8 max-w-7xl mx-auto">
+      <h2 class="text-center font-display text-xs sm:text-lg md:text-xl tracking-[0.2em] sm:tracking-[0.25em] uppercase mb-6 sm:mb-8 leading-relaxed">
+        <span class="text-gray-400">O MUNDO MUDOU. </span>
+        <br class="block sm:hidden" />
+        <span class="text-[#c9a96e]">VIVEMOS UMA POLICRISE</span>
+      </h2>
+     
+     <!-- Seção do Vídeo em Destaque (Removemos o <section> interno duplicado e deixamos apenas a div) -->
+      <div class="max-w-4xl mx-auto w-full">
+        <div class="relative w-full aspect-video rounded-sm overflow-hidden border border-[#c9a96e]/30 shadow-2xl bg-[#0a1628]">
+            <video 
+            class="w-full h-full object-cover" 
+            controls 
+            preload="none" 
+            playsinline
+            poster="imagens/capa_video_02.png">
+            <source src="videos/Flap V2_WEBM.webm" type="video/mp4">
+            <source src="videos/Flap V2_WEBM.webm" type="video/webm">
+            <source src="videos/FLAP_V2_OGV.ogv" type="video/ogv">
+            O seu navegador não suporta a reprodução de vídeos HTML5.
+            </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Códigos da Cultura de Excelência -->
+    <section id="excelencia-section" class="py-10 lg:py-16 bg-[#050d1a]">
+      <div class="px-6 lg:px-16">
+        <h2 class="text-center font-display text-xs sm:text-lg md:text-xl tracking-[0.2em] sm:tracking-[0.25em] uppercase mb-8 sm:mb-14 leading-relaxed">
+          <span class="text-gray-400">OS CÓDIGOS DA </span>
+          <br class="block sm:hidden" />
+          <span class="text-[#c9a96e]">CULTURA DE EXCELÊNCIA</span>
+        </h2>
+        <div class="grid grid-cols-3 md:grid-cols-7 gap-2.5 sm:gap-6">
+          <div class="flex flex-col items-center">
+            <div class="w-full aspect-[3/4] overflow-hidden rounded-sm bg-[#0a1628] border border-white/5">
+              <img src="imagens/cultura-precisao-new-480w.png" alt="PRECISÃO" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+            </div>
+            <span class="mt-2.5 font-display text-[8px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase text-[#c9a96e] text-center">PRECISÃO</span>
+            <div class="w-4 sm:w-8 h-[1px] bg-[#c9a96e]/60 mt-1.5"></div>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="w-full aspect-[3/4] overflow-hidden rounded-sm bg-[#0a1628] border border-white/5">
+              <img src="imagens/cultura-detalhe-new-480w.png" alt="DETALHE" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+            </div>
+            <span class="mt-2.5 font-display text-[8px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase text-[#c9a96e] text-center">DETALHE</span>
+            <div class="w-4 sm:w-8 h-[1px] bg-[#c9a96e]/60 mt-1.5"></div>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="w-full aspect-[3/4] overflow-hidden rounded-sm bg-[#0a1628] border border-white/5">
+              <img src="imagens/cultura-estetica-new-480w.png" alt="ESTÉTICA" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+            </div>
+            <span class="mt-2.5 font-display text-[8px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase text-[#c9a96e] text-center">ESTÉTICA</span>
+            <div class="w-4 sm:w-8 h-[1px] bg-[#c9a96e]/60 mt-1.5"></div>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="w-full aspect-[3/4] overflow-hidden rounded-sm bg-[#0a1628] border border-white/5">
+              <img src="imagens/cultura-linguagem-new-480w.png" alt="LINGUAGEM" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+            </div>
+            <span class="mt-2.5 font-display text-[8px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase text-[#c9a96e] text-center">LINGUAGEM</span>
+            <div class="w-4 sm:w-8 h-[1px] bg-[#c9a96e]/60 mt-1.5"></div>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="w-full aspect-[3/4] overflow-hidden rounded-sm bg-[#0a1628] border border-white/5">
+              <img src="imagens/cultura-responsabilidade-new-480w.png" alt="RESPONSABILIDADE" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+            </div>
+            <span class="mt-2.5 font-display text-[8px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase text-[#c9a96e] text-center">RESPONSABILIDADE</span>
+            <div class="w-4 sm:w-8 h-[1px] bg-[#c9a96e]/60 mt-1.5"></div>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="w-full aspect-[3/4] overflow-hidden rounded-sm bg-[#0a1628] border border-white/5">
+              <img src="imagens/cultura-hospitalidade-new-480w.png" alt="HOSPITALIDADE" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+            </div>
+            <span class="mt-2.5 font-display text-[8px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase text-[#c9a96e] text-center">HOSPITALIDADE</span>
+            <div class="w-4 sm:w-8 h-[1px] bg-[#c9a96e]/60 mt-1.5"></div>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="w-full aspect-[3/4] overflow-hidden rounded-sm bg-[#0a1628] border border-white/5">
+              <img src="imagens/cultura-futuro-new-480w.png" alt="FUTURO" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+            </div>
+            <span class="mt-2.5 font-display text-[8px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase text-[#c9a96e] text-center">FUTURO</span>
+            <div class="w-4 sm:w-8 h-[1px] bg-[#c9a96e]/60 mt-1.5"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <!-- Seção Clientes -->
+    <section class="pt-10 lg:pt-16 pb-6 lg:pb-8 bg-[#050d1a]">
+      <div class="px-6 lg:px-16">
+        <p class="font-display text-center text-xs lg:text-sm tracking-[0.15em] uppercase text-white/80 mb-2">
+          HISTÓRIAS DE + 8.000 PESSOAS EM + 260 ORGANIZAÇÕES NO BRASIL E EM +14 PAÍSES,
+        </p>
+        <p class="font-display text-center text-xs lg:text-sm tracking-[0.15em] uppercase text-[#c9a96e] mb-12">
+          QUE FORAM TRANSFORMADAS, POIS CONSTRUÍRAM CONOSCO, UMA EXPERIÊNCIA EXTRAORDINÁRIA.
+        </p>
+        <div class="flex justify-center">
+          <img src="imagens/Clientes Sem fundo.png" alt="Clientes e parceiros" class="w-full max-w-5xl" />
+        </div>
+      </div>
+    </section>
+
+   <!-- Seção Palestrantes (Carrossel Compacto com Descritivo Expansível no Hover) -->
+    <section id="palestrantes" class="w-full py-12 lg:py-16 bg-[#050d1a] text-white">
+      <div class="w-full max-w-[1400px] mx-auto px-6 lg:px-16">
+        
+       <!-- Cabeçalho e Controles do Carrossel Centralizados -->
+        <div class="flex flex-col items-center justify-center mb-8 lg:mb-12 gap-4 text-center">
+          <div>
+            <h2 class="font-display text-xs sm:text-base md:text-lg tracking-[0.2em] sm:tracking-[0.25em] uppercase text-white">
+              NOSSOS <span class="text-[#c9a96e]">EXPERTS</span>
+            </h2>
+          </div>
+
+          <!-- Botões de Navegação -->
+          <div class="flex items-center gap-3">
+            <button id="speaker-prev-btn" aria-label="Palestrante Anterior" class="w-8 h-8 rounded-full border border-[#c9a96e]/40 flex items-center justify-center text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#050d1a] transition-all cursor-pointer text-xs">
+              &#8592;
+            </button>
+            <button id="speaker-next-btn" aria-label="Próximo Palestrante" class="w-8 h-8 rounded-full border border-[#c9a96e]/40 flex items-center justify-center text-[#c9a96e] hover:bg-[#c9a96e] hover:text-[#050d1a] transition-all cursor-pointer text-xs">
+              &#8594;
+            </button>
+          </div>
+        </div>
+
+        <!-- Container do Carrossel Compacto -->
+        <div id="speakers-carousel" class="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-4 scroll-smooth items-start">
+            
+          <!-- Palestrante 1 -->
+          <div class="group snap-start min-w-[220px] sm:min-w-[250px] max-w-[260px] flex-shrink-0 bg-[#060911] border border-[#c9a96e]/30 rounded-sm p-4 flex flex-col hover:border-[#c9a96e] transition-colors">
+            <div class="w-full aspect-square overflow-hidden rounded-sm mb-3 border border-[#c9a96e]/20 relative">
+              <img src="imagens/marcelo_foto.png" alt="Dr. Marcelo Teixeira" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+            </div>
+            <h3 class="font-display text-xs tracking-[0.12em] uppercase text-[#c9a96e] mb-1">Dr. Marcelo Teixeira</h3>
+            
+            <!-- Descritivo Expansível -->
+            <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
+              <div class="overflow-hidden">
+                <p class="font-sans text-[11px] font-light leading-relaxed text-gray-300 pt-2 border-t border-[#c9a96e]/20 mt-2">
+                  Mestre e doutor em Arquitetura, Design & Tecnologia, atua a 37 anos, como designer, consultor e especialista em gestão da inovação e mercado de luxo, nos setores de arte, arquitetura, design e interiores de aeronaves. Sempre atuando em R&D+I, desenvolvendo estratégias para futuros possíveis, foi Head Designer da Embraer por uma década, colaborando com estúdios internacionais de prestígio como BMW DesignworksUSA na Califórnia, Infusion Design em Kansas, Priestman Goode em Londres e VRDResearch no Brasil / Itália. Além de sua experiência acadêmica, coordenando programas de pós-graduação voltados à inovação e ao design estratégico, se especializou em cultura do luxo, devido a sua grande inserção neste mercado, desenvolvendo ambientes, produtos, aeronaves e embarcações. 
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Palestrante 2 -->
+          <div class="group snap-start min-w-[220px] sm:min-w-[250px] max-w-[260px] flex-shrink-0 bg-[#060911] border border-[#c9a96e]/30 rounded-sm p-4 flex flex-col hover:border-[#c9a96e] transition-colors">
+            <div class="w-full aspect-square overflow-hidden rounded-sm mb-3 border border-[#c9a96e]/20 relative">
+              <img src="imagens/Sylvia-Demetresco-03.jpeg" alt="Dra. Sylvia Demetresco" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+            </div>
+            <h3 class="font-display text-xs tracking-[0.12em] uppercase text-[#c9a96e] mb-1">Dra. Sylvia Demetresco</h3>
+            
+            <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
+              <div class="overflow-hidden">
+                <p class="font-sans text-[11px] font-light leading-relaxed text-gray-300 pt-2 border-t border-[#c9a96e]/20 mt-2">
+                  Possui graduação em Licenciatura e Artes Plásticas pela Fundação Armando Álvares Penteado (1975) e doutorado em Comunicação e Semiótica pela Pontifícia Universidade Católica de São Paulo (1998). Atualmente é cofundadora do Instituto Suíço do Merchandising, docente - l'Ecole Supérieure de Commerce et de Marketing, professora - Ecole Supérieure de Visual Merchandising, professora do Centro Universitário de João Pessoa, sócia fundadora do Instituto Merchandising Brasil, professora do Instituto Brasileiro da Moda, docente da Associação Educacional Boa Viagem, professora do Centro Universitário Senac e professora da Pontifícia Universidade Católica de São Paulo. Tem experiência na área de Artes, com ênfase em MODA, atuando principalmente nos seguintes temas: vitrina, construção de cenários, semiótica, imagens cenográficas e desfiles de moda.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        <!-- Palestrante 3 -->
+          <div class="group snap-start min-w-[220px] sm:min-w-[250px] max-w-[260px] flex-shrink-0 bg-[#060911] border border-[#c9a96e]/30 rounded-sm p-4 flex flex-col hover:border-[#c9a96e] transition-colors">
+            <div class="w-full aspect-square overflow-hidden rounded-sm mb-3 border border-[#c9a96e]/20 relative">
+              <img src="imagens/dani_bueno.png" alt="Dra. Daniela Bueno" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+            </div>
+            <h3 class="font-display text-xs tracking-[0.12em] uppercase text-[#c9a96e] mb-1">Dra. Daniela Bueno</h3>
+            
+            <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
+              <div class="overflow-hidden">
+                <p class="font-sans text-[11px] font-light leading-relaxed text-gray-300 pt-2 border-t border-[#c9a96e]/20 mt-2">
+                  Cirurgiã-dentista, mestre em Patologia Bucal pela USP, doutora e pós-doutora em Genética Humana e Células-Tronco pela USP, com período de pesquisa na UCLA. É referência nas áreas de genética humana, células-tronco, bioengenharia de tecidos e reabilitação de pacientes com fissuras labiopalatinas e malformações craniofaciais. Atuou como responsável técnica pelo Centro de Processamento de Células-Tronco do Hospital Sírio-Libanês e coordenou importantes projetos de bioengenharia tecidual para o SUS, incluindo a elaboração do manual de bioengenharia óssea com células-tronco. Em 2021 foi nomeada para ocupar a cadeira 50 da Academia Brasileira de Odontologia. É professora, pesquisadora e orientadora de mestrado e doutorado na Faculdade Israelita de Ciências da Saúde Albert Einstein. Atualmente integra a diretoria científica da Academia Brasileira de Odontologia e mantém atuação científica, acadêmica e voluntária na Operação Sorriso Brasil.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Palestrante 4 -->
+          <div class="group snap-start min-w-[220px] sm:min-w-[250px] max-w-[260px] flex-shrink-0 bg-[#060911] border border-[#c9a96e]/30 rounded-sm p-4 flex flex-col hover:border-[#c9a96e] transition-colors">
+            <div class="w-full aspect-square overflow-hidden rounded-sm mb-3 border border-[#c9a96e]/20 relative">
+              <img src="imagens/Marjorie Pujol.jpeg" alt="Ma. Marjorie Pujol" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+            </div>
+            <h3 class="font-display text-xs tracking-[0.12em] uppercase text-[#c9a96e] mb-1">Ma. Marjorie Pujol</h3>
+            
+            <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
+              <div class="overflow-hidden">
+                <p class="font-sans text-[11px] font-light leading-relaxed text-gray-300 pt-2 border-t border-[#c9a96e]/20 mt-2">
+                  Vinte anos de experiência em Marketing e Vendas, especialmente nas áreas de Relacionamento com o Cliente e Estratégia de Marketing. Trabalhou por mais de 10 anos na aviação, primeiro com helicópteros e depois, com aviões (vendas e marketing). Construiu uma carreira na Embraer, na área de estratégia de comunicação e marketing.  Quis o destino que ela descobrisse a paixão pela educação. Foi Gerente de Relacionamento dos Colégios Motivo, em Pernambuco e do grupo SOMOS Educação, de atuação nacional. Atuou como professora convidada de Marketing de Relacionamento na FAAP SJC e como consultora na área de CRM. Mestra pela Esalq/USP, com foco em Marketing e Sustentabilidade (estudou alimentos e produtos Carbono Neutro). Formou-se em Publicidade e Propaganda, fez especialização em Marketing, na UFRGS e estudou Gestão Internacional na França, na Université de Rennes.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        <!-- Palestrante 5 -->
+          <div class="group snap-start min-w-[220px] sm:min-w-[250px] max-w-[260px] flex-shrink-0 bg-[#060911] border border-[#c9a96e]/30 rounded-sm p-4 flex flex-col hover:border-[#c9a96e] transition-colors">
+            <div class="w-full aspect-square overflow-hidden rounded-sm mb-3 border border-[#c9a96e]/20 relative">
+              <img src="imagens/Rodrigo Fanton.jpeg" alt="Rodrigo Fanton" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+            </div>
+            <h3 class="font-display text-xs tracking-[0.12em] uppercase text-[#c9a96e] mb-1">Rodrigo Fanton</h3>
+            
+            <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
+              <div class="overflow-hidden">
+                <p class="font-sans text-[11px] font-light leading-relaxed text-gray-300 pt-2 border-t border-[#c9a96e]/20 mt-2">
+                  Engenheiro mecânico formado pela UNICAMP, com MBA Executivo Internacional pela FIA-USP, e acumula quase três décadas de experiência em posições de liderança na Embraer, Harpia Sistemas, Estaleiro Atlântico Sul e Airbus Defence & Space, onde foi CEO no Brasil. Ao longo de sua trajetória, liderou projetos de transformação empresarial, inovação e desenvolvimento de produtos nos setores aeroespacial, de defesa e naval. Na Embraer, teve atuação marcante na aviação executiva, contribuindo para a criação de uma competência própria de design de interiores, para o desenvolvimento dos jatos Legacy e Phenom e para a evolução da experiência e do valor percebido pelos clientes.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Palestrante 6 -->
+          <div class="group snap-start min-w-[220px] sm:min-w-[250px] max-w-[260px] flex-shrink-0 bg-[#060911] border border-[#c9a96e]/30 rounded-sm p-4 flex flex-col hover:border-[#c9a96e] transition-colors">
+            <div class="w-full aspect-square overflow-hidden rounded-sm mb-3 border border-[#c9a96e]/20 relative">
+              <img src="imagens/glauter.png" alt="Glauter Suassuna" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+            </div>
+            <h3 class="font-display text-xs tracking-[0.12em] uppercase text-[#c9a96e] mb-1">Glauter Suassuna</h3>
+            
+            <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
+              <div class="overflow-hidden">
+                <p class="font-sans text-[11px] font-light leading-relaxed text-gray-300 pt-2 border-t border-[#c9a96e]/20 mt-2">
+                  Administrador de Empresas pela FGV e Designer de Interiores pelo IESB, atualmente é pós-graduando em Arquitetura de Luxo pela URM, com especialização em Neuroarquitetura e Experiências Espaciais. Sua trajetória combina visão estratégica de negócios, sensibilidade estética e profundo entendimento da relação entre pessoas e ambientes. Reconhecido como destaque da CASACOR Brasília, desenvolveu projetos voltados à acessibilidade e inclusão, com ambientes dedicados à deficiência visual em 2024 e ao universo do Alzheimer em 2025, demonstrando seu compromisso em criar espaços que promovam bem-estar, autonomia e conexão humana. Atua no desenvolvimento de projetos corporativos para marcas de luxo e na criação de ambientes exclusivos para artistas e clientes de alto padrão, sempre orientado pela inovação e pela construção de experiências memoráveis.
+                </p>
+              </div>
+            </div>
+          </div>
+
+         
+          <!-- Palestrante 7 -->
+          <div class="group snap-start min-w-[220px] sm:min-w-[250px] max-w-[260px] flex-shrink-0 bg-[#060911] border border-[#c9a96e]/30 rounded-sm p-4 flex flex-col hover:border-[#c9a96e] transition-colors">
+            <div class="w-full aspect-square overflow-hidden rounded-sm mb-3 border border-[#c9a96e]/20 relative">
+              <img src="imagens/andreia.png" alt="Andreia Zwetsch" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+            </div>
+            <h3 class="font-display text-xs tracking-[0.12em] uppercase text-[#c9a96e] mb-1">Andreia Zwetsch</h3>
+            
+            <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
+              <div class="overflow-hidden">
+                <p class="font-sans text-[11px] font-light leading-relaxed text-gray-300 pt-2 border-t border-[#c9a96e]/20 mt-2">
+                  Gaúcha, formada em Relações Públicas pela Universidade Federal de Santa Maria (UFSM), e reside em São Paulo há 25 anos. Construiu sua carreira na área de comunicação, atuando em diversas agências antes de direcionar sua trajetória para o segmento da aviação executiva. Há 22 anos integra o Helipark, centro de serviços para helicópteros, onde exerce o cargo de Diretora Comercial e de Marketing. Ao longo dessa trajetória, consolidou sua atuação no desenvolvimento de estratégias comerciais, marketing, relacionamento com clientes e fortalecimento da marca, contribuindo para posicionar a empresa como referência no setor.Com uma visão estratégica aliada à sólida experiência em comunicação, Andreia é reconhecida por sua capacidade de construir relacionamentos duradouros, identificar oportunidades de negócio e liderar projetos com foco em resultados, inovação e excelência na experiência do cliente.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção FLAP LAB -->
+    <section id="flap-lab" class="pt-6 lg:pt-8 pb-20 lg:pb-28 bg-[#050d1a]">
+      <div class="px-6 lg:px-16">
+        <div class="text-center mb-12">
+          <p class="font-display text-xs lg:text-sm tracking-[0.2em] uppercase leading-relaxed">
+            <span class="text-gray-300">EM NOSSO LABORATÓRIO, PARTILHAMOS CONHECIMENTO ATRAVÉS DE </span>
+            <span class="text-[#c9a96e]">JORNADAS EXCLUSIVAS, </span>CONCEBIDAS PARA TRADUZIR NECESSIDADES ESPECÍFICAS QUE...
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+          <!-- Card 1 -->
+          <a href="#sessions" class="relative overflow-hidden rounded-sm group cursor-pointer flex flex-col justify-between w-full h-full min-h-[220px] sm:min-h-[300px] lg:min-h-[420px] transition-transform duration-300 hover:-translate-y-1 select-none border border-[#c9a96e]">
+            <div class="relative flex-1 w-full overflow-hidden">
+              <img src="imagens/Flap talks_02.png" alt="SESSIONS" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="relative z-10 w-full bg-[#050d1a] pt-0 pb-3 sm:pb-4">
+              <div class="w-full bg-[#c9a96e] py-1.5 sm:py-2 px-2 sm:px-3 text-center">
+                <p class="font-display text-[9px] sm:text-xs lg:text-sm tracking-[0.1em] sm:tracking-[0.15em] font-bold uppercase text-[#050d1a] leading-tight">INSPIRAM</p>
+              </div>
+              <div class="flex justify-center mt-2 sm:mt-3">
+                <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-full flex items-center justify-center">
+                  <span class="font-display text-[#c9a96e] text-[10px] sm:text-xs font-light tracking-widest">SESSIONS</span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 2 -->
+          <a href="#imersao-executiva" class="relative overflow-hidden rounded-sm group cursor-pointer flex flex-col justify-between w-full h-full min-h-[220px] sm:min-h-[300px] lg:min-h-[420px] transition-transform duration-300 hover:-translate-y-1 select-none border border-[#c9a96e]">
+            <div class="relative flex-1 w-full overflow-hidden">
+              <img src="imagens/copo-imersao.png" alt="IMERSÃO EXECUTIVA" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="relative z-10 w-full bg-[#050d1a] pt-0 pb-3 sm:pb-4">
+              <div class="w-full bg-[#c9a96e] py-1.5 sm:py-2 px-2 sm:px-3 text-center">
+                <p class="font-display text-[9px] sm:text-xs lg:text-sm tracking-[0.1em] sm:tracking-[0.15em] font-bold uppercase text-[#050d1a] leading-tight">CONECTAM</p>
+              </div>
+              <div class="flex justify-center mt-2 sm:mt-3">
+                <div class="h-7 sm:h-9 rounded-full flex items-center justify-center ">
+                  <span class="font-display text-[#c9a96e] text-[10px] sm:text-xs font-light tracking-widest">EXCELLENCE FORUM</span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          
+          <!-- Card 3 -->
+          <a href="#bespoke-learning" class="relative overflow-hidden rounded-sm group cursor-pointer flex flex-col justify-between w-full h-full min-h-[220px] sm:min-h-[300px] lg:min-h-[420px] transition-transform duration-300 hover:-translate-y-1 select-none border border-[#c9a96e]">
+            <div class="relative flex-1 w-full overflow-hidden">
+              <img src="imagens/flaplab-bespoke-02.png" alt="BESPOKE LEARNING EXPERIENCE" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="relative z-10 w-full bg-[#050d1a] pt-0 pb-3 sm:pb-4">
+              <div class="w-full bg-[#c9a96e] py-1.5 sm:py-2 px-2 sm:px-3 text-center">
+                <p class="font-display text-[9px] sm:text-xs lg:text-sm tracking-[0.1em] sm:tracking-[0.15em] font-bold uppercase text-[#050d1a] leading-tight">TRANSFORMAM</p>
+              </div>
+              <div class="flex justify-center mt-2 sm:mt-3">
+                <div class="h-7 sm:h-9 rounded-full flex items-center justify-center">
+                  <span class="font-display text-[#c9a96e] text-[10px] sm:text-xs font-light tracking-widest">BESPOKE LEARNING EXPERIENCE</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Etapas do Laboratório -->
+    <!-- Etapa 01 -->
+    <section id="sessions" class="py-6 lg:py-8 bg-[#f9f6f0] text-gray-900">
+      <div class="px-6 lg:px-16 max-w-[1400px] mx-auto">
+        <p class="font-display text-[#c9a96e] text-xs tracking-[0.25em] uppercase mb-6"></p>
+        <div class="rounded-sm overflow-hidden border border-[#c9a96e]/40">
+          <div class="flex flex-col lg:flex-row">
+            <div class="lg:w-5/12 p-8 lg:p-12 flex flex-col justify-between">
+              <div>
+                <h3 class="font-display text-2xl lg:text-3xl font-bold tracking-[0.1em] uppercase text-gray-900 mb-1">SESSIONS</h3>
+                <p class="font-sans text-sm italic text-[#c9a96e] mb-8">(90 min palestras presencial ou online)</p>
+                <div class="font-sans text-sm leading-relaxed text-gray-700 space-y-4">
+                  <p>
+                    <span class="text-[#c9a96e]">Uma partilha que transcende uma apresentação tradicional</span>, onde ideias originais ganham protagonismo e desafiam o óbvio com elegância intelectual, provocando reflexões profundas e instigando novas perspectivas.
+                  </p>
+                  <p>
+                    Mais do que conteúdo, são momentos de conexão refinada, onde narrativa, estética e pensamento convergem para despertar curiosidade, <span class="text-[#c9a96e]">inspirar transformação e elevar o repertório de quem lidera o futuro.</span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="lg:hidden relative overflow-hidden rounded-sm min-h-[220px] sm:min-h-[280px] mt-8">
+                <img src="imagens/Flap talks.png" alt="SESSIONS" class="w-full h-full object-cover" />
+              </div>
+
+              <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mt-8">
+                <a href="#joint" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs font-display tracking-[0.15em] uppercase transition-all hover:opacity-85 bg-[#c9a96e] text-[#050d1a]">
+                  Join this movement
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                
+              </div>
+            </div>
+            <div class="hidden lg:block lg:w-7/12 relative overflow-hidden">
+              <img src="imagens/Flap talks.png" alt="SESSIONS" class="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Etapa 02 -->
+    <section id="imersao-executiva" class="py-6 lg:py-8 bg-[#f9f6f0] text-gray-900">
+      <div class="px-6 lg:px-16 max-w-[1400px] mx-auto">
+        <p class="font-display text-[#c9a96e] text-xs tracking-[0.25em] uppercase mb-6"></p>
+        <div class="rounded-sm overflow-hidden border border-[#c9a96e]/40">
+          <div class="flex flex-col lg:flex-row">
+            <div class="lg:w-5/12 p-8 lg:p-12 flex flex-col justify-between">
+              <div>
+                <h3 class="font-display text-2xl lg:text-3xl font-bold tracking-[0.1em] uppercase text-gray-900 mb-1">EXCELLENCE FORUM</h3>
+                <p class="font-sans text-sm italic text-[#c9a96e] mb-8">(2 dias @ SP ou in company)</p>
+                <div class="font-sans text-sm leading-relaxed text-gray-700 space-y-4">
+                  <p>
+                    Uma experiência presencial, <span class="text-[#c9a96e]">concebida para impulsionar conexões de alto valor e elevar o repertório intelectual, fundamentada no intercâmbio de informações estratégicas conduzido com a precisão e a sofisticação que distinguem os universos do luxo e da aviação</span>, por meio de aulas expositivas envolventes e debates enriquecedores que ampliam perspectivas e geram novas oportunidades de negócio.
+                  </p>
+                </div>
+              </div>
+
+              <div class="lg:hidden relative overflow-hidden rounded-sm min-h-[220px] sm:min-h-[280px] mt-8">
+                <img src="imagens/Flap Excellence Forum .png" alt="IMERSÃO EXECUTIVA" class="w-full h-full object-cover" />
+              </div>
+
+              <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mt-8">
+                <a href="#joint" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs font-display tracking-[0.15em] uppercase transition-all hover:opacity-85 bg-[#c9a96e] text-[#050d1a]">
+                  Join this movement
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                
+              </div>
+            </div>
+            <div class="hidden lg:block lg:w-7/12 relative overflow-hidden">
+              <img src="imagens/Flap Excellence Forum .png" alt="IMERSÃO EXECUTIVA" class="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- Etapa 03 -->
+    <section id="bespoke-learning" class="py-6 lg:py-8 bg-[#f9f6f0] text-gray-900">
+      <div class="px-6 lg:px-16 max-w-[1400px] mx-auto">
+        <p class="font-display text-[#c9a96e] text-xs tracking-[0.25em] uppercase mb-6"></p>
+        <div class="rounded-sm overflow-hidden border border-[#c9a96e]/40">
+          <div class="flex flex-col lg:flex-row">
+            <div class="lg:w-5/12 p-8 lg:p-12 flex flex-col justify-between">
+              <div>
+                <h3 class="font-display text-2xl lg:text-3xl font-bold tracking-[0.1em] uppercase text-gray-900 mb-1">BESPOKE LEARNING EXPERIENCE</h3>
+                <p class="font-sans text-sm italic text-[#c9a96e] mb-8">(Imersões VIPs exclusivas para convidados)</p>
+                <div class="font-sans text-sm leading-relaxed text-gray-700 space-y-4">
+                  <p>
+                    <span class="text-[#c9a96e]">Uma experiência dedicada à construção de um networking de excelência</span> e ao aprimoramento intelectual, sustentada pelo intercâmbio de informações estratégicas, pautadas pela precisão e pela sofisticação que definem os universos do luxo e da aviação, através de aulas expositivas, debates e vivências em ambientes sofisticados no Brasil e Exterior.
+                  </p>
+                  <p class="text-[#c9a96e]">
+                    Acesso privilegiado a experimentações práticas em cenários surpreendentes de refinamento excepcional, onde o padrão High-end se manifesta em cada detalhe.
+                  </p>
+                </div>
+              </div>
+
+              <div class="lg:hidden relative overflow-hidden rounded-sm min-h-[220px] sm:min-h-[280px] mt-8">
+                <img src="imagens/etapa-bespoke-01.png" alt="BESPOKE LEARNING EXPERIENCE" class="w-full h-full object-cover" />
+              </div>
+
+              <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mt-8">
+                <a href="#joint" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs font-display tracking-[0.15em] uppercase transition-all hover:opacity-85 bg-[#c9a96e] text-[#050d1a]">
+                  Join this movement
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                
+              </div>
+            </div>
+            <div class="hidden lg:block lg:w-7/12 relative overflow-hidden">
+              <img src="imagens/Flap Bespoke.png" alt="BESPOKE LEARNING EXPERIENCE" class="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <!-- Seção Encontros Marcados -->
+    <section id="encontros" class="py-10 lg:py-16 px-4 sm:px-6 lg:px-12 bg-[#050d1a]">
+      <div class="w-full text-center mb-10 lg:mb-12">
+        <h2 class="text-center font-display text-xs sm:text-lg md:text-xl tracking-[0.2em] sm:tracking-[0.25em] uppercase mb-8 sm:mb-14 leading-relaxed">
+          <span class="text-[#c9a96e]">ENCONTROS MARCADOS</span>
+        </h2>
+      </div>
+       
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            
+        <!-- Evento 1 - Brasília -->
+        <div class="encontro-card relative overflow-hidden rounded-sm flex flex-col justify-between w-full border border-[#c9a96e] bg-[#050d1a] cursor-pointer hover:border-[#e6ca94] transition-all hover:scale-[1.01]" 
+             data-folders="imagens/1b.png, imagens/2b.png, imagens/3b.png, imagens/4b.png, imagens/5b.png, imagens/6b.png, imagens/7b.png">
+          <!-- Imagem na parte superior -->
+          <div class="relative w-full h-[220px] sm:h-[260px] overflow-hidden">
+            <img src="imagens/brasilia.png" alt="Brasília" class="w-full h-full object-cover" />
+          </div>
+          
+          <!-- Bloco Inferior de Informações -->
+          <div class="w-full">
+            <div class="w-full bg-[#c9a96e] py-2 px-3 text-center">
+              <p class="font-display text-xs sm:text-sm tracking-[0.15em] font-bold uppercase text-[#050d1a] leading-tight">
+                BRASÍLIA
+              </p>
+            </div>
+            <div class="p-4 text-center bg-[#050d1a] space-y-1">
+              <p class="font-display text-[10px] sm:text-xs tracking-[0.18em] uppercase text-[#c9a96e]">
+                BESPOKE LEARNING EXP
+              </p>
+              <p class="font-display text-[9px] sm:text-[10px] tracking-[0.15em] uppercase text-white/70">
+                @ TBD
+              </p>
+              <p class="font-display text-[9px] sm:text-[10px] tracking-[0.15em] uppercase text-white/50">
+                27 & 28 NOV 26
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evento 2 - Campos do Jordão -->
+        <div class="encontro-card relative overflow-hidden rounded-sm flex flex-col justify-between w-full border border-[#c9a96e] bg-[#050d1a] cursor-pointer hover:border-[#e6ca94] transition-all hover:scale-[1.01]" 
+             data-folders="imagens/1.png, imagens/2.png, imagens/3.png, imagens/4.png, imagens/5.png, imagens/6.png, imagens/7.png">
+          <!-- Imagem na parte superior -->
+          <div class="relative w-full h-[220px] sm:h-[260px] overflow-hidden">
+            <img src="imagens/encontros-campos-jordao.png" alt="Campos do Jordão" class="w-full h-full object-cover" />
+          </div>
+          
+          <!-- Bloco Inferior de Informações -->
+          <div class="w-full">
+            <div class="w-full bg-[#c9a96e] py-2 px-3 text-center">
+              <p class="font-display text-xs sm:text-sm tracking-[0.15em] font-bold uppercase text-[#050d1a] leading-tight">
+                CAMPOS DO JORDÃO
+              </p>
+            </div>
+            <div class="p-4 text-center bg-[#050d1a] space-y-1">
+              <p class="font-display text-[10px] sm:text-xs tracking-[0.18em] uppercase text-[#c9a96e]">
+                BESPOKE LEARNING EXP
+              </p>
+              <p class="font-display text-[9px] sm:text-[10px] tracking-[0.15em] uppercase text-white/70">
+                @ QUEBRA NOZ HOTEL BOUTIQUE
+              </p>
+              <p class="font-display text-[9px] sm:text-[10px] tracking-[0.15em] uppercase text-white/50">
+                21 & 22 NOV 26
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Seção A Quem Se Destina -->
+    <section id="quem" class="flex items-center bg-[#090c10] py-6 lg:py-12">
+      <div class="w-full flex flex-col lg:flex-row items-stretch bg-[#090c10]">
+        <div class="w-full lg:w-1/2 flex items-center px-6 sm:px-12 lg:px-16 xl:px-20 py-6 lg:py-12 bg-[#090c10]">
+          <div class="w-full max-w-xl mx-auto lg:mx-0">
+            <p class="font-display text-[#c9a96e] text-xs tracking-[0.3em] uppercase mb-4">A QUEM SE DESTINA</p>
+            
+            <div class="space-y-6 lg:space-y-8 mt-4">
+              <div class="flex gap-5 lg:gap-6 items-start">
+                <span class="font-script text-3xl lg:text-4xl text-[#c9a96e] flex-shrink-0 leading-none">01.</span>
+                <p class="font-sans text-xs lg:text-sm text-white/80 leading-relaxed tracking-wide">
+                  Aqueles que <span class="text-[#c9a96e]">transitam com fluidez no universo do luxo e premium</span>, onde a excelência é premissa e a evolução contínua e atualização em um cenário de intensa transformação é indispensável.
+                </p>
+              </div>
+
+              <div class="flex gap-5 lg:gap-6 items-start">
+                <span class="font-script text-3xl lg:text-4xl text-[#c9a96e] flex-shrink-0 leading-none">02.</span>
+                <p class="font-sans text-xs lg:text-sm text-white/80 leading-relaxed tracking-wide">
+                  Aqueles que <span class="text-[#c9a96e]">aspiram integrar o ecossistema do luxo e premium</span> e compreender as expectativas de um público seleto e sofisticado.
+                </p>
+              </div>
+
+              <div class="flex gap-5 lg:gap-6 items-start">
+                <span class="font-script text-3xl lg:text-4xl text-[#c9a96e] flex-shrink-0 leading-none">03.</span>
+                <p class="font-sans text-xs lg:text-sm text-white/80 leading-relaxed tracking-wide">
+                  Aqueles que desejam <span class="text-[#c9a96e]">dominar os códigos do high-end e</span> transformá-los em estratégia <span class="text-[#c9a96e]">para criar valor,</span><span class="text-[#c9a96e]"> distinção e influência</span> em diferentes segmentos.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Container da imagem com altura ajustada (mais baixa em cima e embaixo) sem bordas -->
+        <div class="w-full lg:w-1/2 h-[280px] sm:h-[340px] lg:h-[380px] relative flex items-center justify-center bg-[#090c10] overflow-hidden">
+          <img src="imagens/quem-destina-17b.png" alt="A quem se destina" class="w-full h-full object-cover object-center lg:object-right" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Observatório Vivo -->
+    <section id="observatorio" class="py-10 lg:py-16 bg-[#050d1a]">
+      <div class="px-6 lg:px-16">
+        <h2 class="font-display text-center text-xs lg:text-sm tracking-[0.25em] uppercase text-white mb-12">
+          OBSERVATÓRIO VIVO. SINAIS DO PRESENTE. INSIGHTS PARA O FUTURO
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
+          <!-- Episódio 1 -->
+          <div class="flex flex-col gap-3">
+            <div class="obs-card relative overflow-hidden rounded-sm group cursor-pointer block border border-[#c9a96e]/20" data-embed="https://www.instagram.com/reel/DdJsRvfDmeF/embed">
+              <img src="imagens/1 Intro 001.png" alt="Observatório 1a" class="w-full h-auto block group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            
+          </div>
+
+          <!-- Episódio 2 -->
+          <div class="flex flex-col gap-3">
+            <div class="obs-card relative overflow-hidden rounded-sm group cursor-pointer block border border-[#c9a96e]/20" data-embed="https://www.instagram.com/reel/DeXDqfKOzpC/embed">
+              <img src="imagens/FLAP - Frases de Impacto 003.png" alt="Observatório 2a" class="w-full h-auto block group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            
+          </div>
+
+          <!-- Episódio 3 -->
+          <div class="flex flex-col gap-3">
+            <div class="obs-card relative overflow-hidden rounded-sm group cursor-pointer block border border-[#c9a96e]/20" data-embed="https://www.instagram.com/reel/DeKx391j6f8/embed">
+              <img src="imagens/1 Intro 003.png" alt="Observatório 3a" class="w-full h-auto block group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            
+          </div>
+
+          <!-- Episódio 4 -->
+          <div class="flex flex-col gap-3">
+            <div class="obs-card relative overflow-hidden rounded-sm group cursor-pointer block border border-[#c9a96e]/20" data-embed="https://www.instagram.com/reel/Dd-J_EMO79T/embed">
+              <img src="imagens/FLAP - Frases de Impacto 002.png" alt="Observatório 4a" class="w-full h-auto block group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            
+          </div>
+
+          <!-- Episódio 5 -->
+          <div class="flex flex-col gap-3">
+            <div class="obs-card relative overflow-hidden rounded-sm group cursor-pointer block border border-[#c9a96e]/20" data-embed="https://www.instagram.com/reel/Dd2JM1WD-h5/embed">
+              <img src="imagens/1 Intro 002.png" alt="Observatório 5a" class="w-full h-auto block group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            
+          </div>
+
+          <!-- Episódio 6 -->
+          <div class="flex flex-col gap-3">
+            <div class="obs-card relative overflow-hidden rounded-sm group cursor-pointer block border border-[#c9a96e]/20" data-embed="https://www.instagram.com/reel/DdztvFju8oo/embed">
+              <img src="imagens/FLAP - Frases de Impacto 001 .png" alt="Observatório 6a" class="w-full h-auto block group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            
+          </div>
+
+          <!-- Episódio 7 -->
+          <div class="flex flex-col gap-3">
+            <div class="obs-card relative overflow-hidden rounded-sm group cursor-pointer block border border-[#c9a96e]/20" data-embed="https://www.instagram.com/reel/DdpOKcmPi_0/embed">
+              <img src="imagens/1 Session CJDF.png" alt="Observatório 7a" class="w-full h-auto block group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <!-- Modal do Instagram -->
+    <div id="embed-modal" class="fixed inset-0 z-50 items-center justify-center bg-black/80 p-4 hidden">
+      <div class="relative bg-black rounded-lg overflow-hidden max-w-sm w-full p-2" id="embed-modal-content">
+        <button id="close-modal-btn" class="absolute top-2 right-2 text-white bg-gray-800 hover:bg-gray-700 rounded-full w-8 h-8 flex items-center justify-center z-10">
+          ✕
+        </button>
+        <iframe id="embed-iframe" src="" class="w-full h-[480px] rounded" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+      </div>
+    </div>
+
+    <!-- Seção Final CTA -->
+    <section class="relative min-h-screen flex items-center overflow-hidden bg-[#050d1a] text-white">
+      <div class="relative z-10 px-8 lg:px-20 max-w-xl ml-8 lg:ml-12">
+        <h2 class="font-sans text-xs lg:text-sm tracking-[0.2em] uppercase text-[#c9a96e] font-light leading-relaxed mb-12">
+          EXCELÊNCIA NÃO É UM DESTINO.<br />
+          É UMA CULTURA.
+        </h2>
+
+        <p class="font-sans text-[10px] lg:text-xs tracking-[0.18em] uppercase text-gray-300 font-light leading-relaxed mb-10">
+          FAÇA PARTE DESSE MOVIMENTO<br />
+          DEDICADO A INVESTIGAR, CULTIVAR<br />
+          E APLICAR UMA NOVA CULTURA DA<br />
+          EXCELÊNCIA.
+        </p>
+
+        <a href="#joint" class="inline-block px-8 py-2.5 rounded-full text-xs font-light tracking-wide transition-all hover:opacity-90 shadow-md style-btn-cta">
+          JOIN THIS MOVEMENT
+        </a>
+      </div>
+
+      <div class="absolute inset-0 pointer-events-none z-0">
+        <img src="imagens/final-cta-bg.png" alt="Aeronave FLAP Institute" class="w-full h-full object-cover object-right-bottom" />
+      </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section id="joint" class="relative min-h-screen flex items-center bg-[#060911] text-white overflow-hidden py-16">
+      <div class="relative z-10 max-w-[1400px] w-full mx-auto px-8 lg:px-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-5 space-y-8">
+            <div>
+              <h2 class="font-sans text-sm lg:text-base tracking-[0.2em] uppercase font-light leading-relaxed">
+                <span class="block text-[#c9a96e]">JOIN THE CULTURE,</span>
+                <span class="block text-gray-300">JOIN THE MOVEMENT</span>
+              </h2>
+            </div>
+
+            <p class="font-sans text-xs sm:text-sm text-gray-300 leading-relaxed font-light">
+              Entre em contato com o nosso Concierge para saber mais sobre agendamentos ou para programas personalizados in-company.
+            </p>
+
+            <div class="space-y-4 text-xs sm:text-sm font-light tracking-wide pt-4 border-t border-[#c9a96e]/20">
+              <p class="text-gray-400">Atendimento:</p>
+              
+              <div class="space-y-1 text-[#c9a96e]">
+                <a href="https://wa.me/5511924878727" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:underline">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#c9a96e]">
+                    <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/>
+                  </svg>
+                  <span>+55 (11) 92487-8727</span>
+                </a>
+              </div>
+
+              <div>
+                <a href="mailto:info@flapinstitute.com.br" class="text-[#c9a96e] hover:underline">
+                  info@flapinstitute.com.br
+                </a>
+              </div>
+
+              <!-- Redes Sociais FLAP Institute -->
+              <div class="flex items-center gap-4 pt-2">
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/flapinstitute/" target="_blank" rel="noopener noreferrer" aria-label="Instagram FLAP Institute" class="text-[#c9a96e] hover:text-white transition-colors">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                </a>
+
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/flapinstitute/" target="_blank" rel="noopener noreferrer" aria-label="Facebook FLAP Institute" class="text-[#c9a96e] hover:text-white transition-colors">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                  </svg>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/company/flapinstitute/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn FLAP Institute" class="text-[#c9a96e] hover:text-white transition-colors">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 lg:col-start-7 bg-[#050d1a]/90 backdrop-blur-md p-8 lg:p-10 border border-[#c9a96e]/30 rounded-sm">
+            <!-- Estado 1: Formulário Configurado -->
+            <form id="contact-form" action="https://formsubmit.co/ajax/info@flapinstitute.com.br" method="POST" class="space-y-4">
+              <!-- Configurações Ocultas para o FormSubmit -->
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_subject" value="Novo Contato - FLAP Institute">
+              <input type="hidden" name="_template" value="table">
+
+              <h3 class="font-display text-sm tracking-[0.2em] text-[#c9a96e] uppercase mb-6">
+                Solicitar Contato
+              </h3>
+
+              <div>
+                <input type="text" name="nome" required placeholder="Nome Completo *" class="w-full bg-[#060911] border border-[#c9a96e]/30 rounded-none px-4 py-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#c9a96e]" />
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input type="email" name="email" required placeholder="E-mail *" class="w-full bg-[#060911] border border-[#c9a96e]/30 rounded-none px-4 py-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#c9a96e]" />
+                <input type="tel" name="telefone" required placeholder="WhatsApp / Telefone *" class="w-full bg-[#060911] border border-[#c9a96e]/30 rounded-none px-4 py-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#c9a96e]" />
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input type="text" name="empresa" placeholder="Empresa / Cargo" class="w-full bg-[#060911] border border-[#c9a96e]/30 rounded-none px-4 py-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#c9a96e]" />
+                <select name="programa" class="w-full bg-[#060911] border border-[#c9a96e]/30 rounded-none px-4 py-3 text-xs text-gray-300 focus:outline-none focus:border-[#c9a96e]">
+                  <option value="">Programa de Interesse</option>
+                  <option value="Sessions (Palestras)">Sessions</option>
+                  <option value="Imersão Executiva">Excellence Forum</option>
+                  <option value="Bespoke / In-Company">Bespoke Learning Experience</option>
+                </select>
+              </div>
+
+              <div>
+                <textarea name="mensagem" rows="3" placeholder="Mensagem ou objetivo (Opcional)" class="w-full bg-[#060911] border border-[#c9a96e]/30 rounded-none px-4 py-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#c9a96e]"></textarea>
+              </div>
+
+              <button type="submit" id="submit-btn" class="w-full py-3 mt-2 text-xs font-display tracking-[0.2em] uppercase transition-all hover:opacity-90 shadow-md bg-[#c9a96e] text-[#050d1a]">
+                Enviar
+              </button>
+            </form>
+
+            <!-- Estado 2: Mensagem de Sucesso -->
+            <div id="contact-success" class="text-center py-12 space-y-4 hidden">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+              <h3 class="font-display text-lg text-white uppercase tracking-wider">Solicitação Enviada</h3>
+              <p class="font-sans text-xs text-gray-300">
+                Nosso concierge entrará em contato em até 24 horas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Carrossel de Folders -->
+    <div id="folder-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm p-4 hidden">
+      <div class="relative inline-block bg-[#050d1a] border border-[#c9a96e] rounded-sm p-2 sm:p-3 shadow-2xl">
+        
+        <!-- Botão Fechar (X) -->
+        <button id="close-folder-btn" aria-label="Fechar folder" class="absolute -top-3 -right-3 sm:top-2 sm:right-2 text-[#c9a96e] hover:text-white bg-[#050d1a] hover:bg-[#c9a96e]/20 border border-[#c9a96e]/60 rounded-full w-8 h-8 flex items-center justify-center z-20 transition-colors cursor-pointer shadow-md">
+          ✕
+        </button>
+
+        <!-- Botão Anterior (Esquerda) -->
+        <button id="prev-folder-btn" aria-label="Folder anterior" class="absolute left-2 top-1/2 -translate-y-1/2 text-[#c9a96e] hover:text-white bg-[#050d1a]/80 hover:bg-[#c9a96e]/20 border border-[#c9a96e]/50 rounded-full w-9 h-9 flex items-center justify-center z-20 transition-all cursor-pointer shadow-md">
+          &#8592;
+        </button>
+
+        <!-- Botão Próximo (Direita) -->
+        <button id="next-folder-btn" aria-label="Próximo folder" class="absolute right-2 top-1/2 -translate-y-1/2 text-[#c9a96e] hover:text-white bg-[#050d1a]/80 hover:bg-[#c9a96e]/20 border border-[#c9a96e]/50 rounded-full w-9 h-9 flex items-center justify-center z-20 transition-all cursor-pointer shadow-md">
+          &#8594;
+        </button>
+
+        <!-- Container da Imagem Ajustada -->
+        <div class="flex justify-center items-center overflow-hidden">
+          <img id="folder-img" src="" alt="Folder do Encontro" class="block max-w-[85vw] max-h-[82vh] w-auto h-auto object-contain rounded-sm" />
+        </div>
+
+        <!-- Indicadores / Contador do Carrossel (Opcional) -->
+        <div id="folder-counter" class="text-center font-display text-[10px] tracking-[0.2em] text-[#c9a96e] mt-2 uppercase"></div>
+      </div>
+    </div>
+    
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

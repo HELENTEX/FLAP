@@ -1,0 +1,86 @@
+:root {
+  --radius: 0.25rem;
+
+  --background: #050d1a;
+  --foreground: #ffffff;
+  --surface: #0d1929;
+  --surface-elevated: #162034;
+  --card: #0d1929;
+  --card-foreground: #ffffff;
+  --popover: #0d1929;
+  --popover-foreground: #ffffff;
+  --primary: #c9a96e;
+  --primary-foreground: #050d1a;
+  --secondary: #162034;
+  --secondary-foreground: #ffffff;
+  --muted: #162034;
+  --muted-foreground: #7a90b0;
+  --accent: #c9a96e;
+  --accent-foreground: #050d1a;
+  --border: rgba(201, 169, 110, 0.2);
+  --input: #162034;
+  --ring: #c9a96e;
+
+  --font-display: 'Josefin Sans', sans-serif;
+  --font-sans: 'Raleway', sans-serif;
+  --font-script: 'Great Vibes', cursive;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+/* Indicadores da navegação por bolinhas (DotNav) */
+.dot-item {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: rgba(201, 169, 110, 0.35);
+  transition: all 0.3s ease;
+}
+
+.dot-item.active {
+  width: 8px;
+  height: 8px;
+  background-color: #c9a96e;
+}
+
+/* Gradiente do botão Final CTA */
+.style-btn-cta {
+  background: linear-gradient(180deg, #c9a96e 0%, #a28249 100%);
+  color: #ffffff;
+}
+
+/* Utilitários de Animação e Exibição */
+.menu-overlay.is-active {
+  display: flex !important;
+}
+
+.excelencia-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
