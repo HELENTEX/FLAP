@@ -154,18 +154,19 @@
         <span class="text-[#c9a96e]">VIVEMOS UMA POLICRISE</span>
       </h2>
      
-     <!-- Seção do Vídeo em Destaque (Removemos o <section> interno duplicado e deixamos apenas a div) -->
+     <!-- Seção do Vídeo em Destaque -->
       <div class="max-w-4xl mx-auto w-full">
         <div class="relative w-full aspect-video rounded-sm overflow-hidden border border-[#c9a96e]/30 shadow-2xl bg-[#0a1628]">
             <video 
             class="w-full h-full object-cover" 
             controls 
-            preload="none" 
+            preload="metadata" 
             playsinline
+            webkit-playsinline
+            x5-playsinline
             poster="imagens/capa_video_02.png">
-            <source src="videos/Flap V2_WEBM.webm" type="video/mp4">
             <source src="videos/Flap V2_WEBM.webm" type="video/webm">
-            <source src="videos/FLAP_V2_OGV.ogv" type="video/ogv">
+            <source src="videos/FLAP_V2_OGV.ogv" type="video/ogg">
             O seu navegador não suporta a reprodução de vídeos HTML5.
             </video>
         </div>
